@@ -1,5 +1,4 @@
 <?php
-
 // Creating the widget 
 class phila_topics_display_widget extends WP_Widget {
 
@@ -9,7 +8,7 @@ parent::__construct(
 	'phila_topics_display_widget', 
 
 	// Widget name will appear in UI
-	__('Phila- Display Topics Widget', 'phila'), 
+	__('Phila Display Topics Widget', 'phila'), 
 
 	// Widget description
 	array( 'description' => __( 'Displays the list of topics and links to filtered views', 'phila' ), ) 
@@ -23,19 +22,7 @@ public function widget( $args, $instance ) {
 	echo $args['before_widget'];
 	if ( ! empty( $title ) )
 	echo $args['before_title'] . $title . $args['after_title'];
-	
-	function seoUrl($string) {
-		//Lower case everything
-		$string = strtolower($string);
-		$string = preg_replace("/&amp;/", "", $string);
-		//Make alphanumeric (removes all other characters)
-		$string = preg_replace("/[^a-z0-9_\s-]/", "", $string);
-		//Clean up multiple dashes or whitespaces
-		$string = preg_replace("/[\s-]+/", " ", $string);
-		//Convert whitespaces and underscore to dash
-		$string = preg_replace("/[\s_]/", "-", $string);
-		return $string;
-	}
+
 
 	$topic_args = array( 'hide_empty=0' );
 

@@ -5,6 +5,7 @@
  * Additional custom taxonomies can be defined here
  * http://codex.wordpress.org/Function_Reference/register_taxonomy
  */
+
 function add_custom_taxonomies() {
   // Add new "Locations" taxonomy to Posts
   register_taxonomy('topics', 
