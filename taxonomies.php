@@ -38,7 +38,7 @@ function add_custom_taxonomies() {
     ),
   ));
  
-	register_taxonomy('departments', 
+	register_taxonomy('display_options', 
 	array(
   	'post',	
 	'page',
@@ -48,21 +48,21 @@ function add_custom_taxonomies() {
     'hierarchical' => true,
     // This array of options controls the labels displayed in the WordPress Admin UI
     'labels' => array(
-      'name' => _x( 'Departments', 'departments' ),
-      'singular_name' => _x( 'Department', 'Departments' ),
-      'search_items' =>  __( 'Search Departments' ),
-      'all_items' => __( 'All Departments' ),
-      'edit_item' => __( 'Edit Department' ),
-      'update_item' => __( 'Update Department' ),
-      'add_new_item' => __( 'Add New Department' ),
-      'new_item_name' => __( 'New Department Name' ),
-      'menu_name' => __( 'Departments' ),
+      'name' => _x( 'Display Options', 'phila' ),
+      'singular_name' => _x( 'Display Option', 'phila' ),
+      'search_items' =>  __( 'Search Options' ),
+      'all_items' => __( 'All Options' ),
+      'edit_item' => __( 'Edit Options' ),
+      'update_item' => __( 'Update Options' ),
+      'add_new_item' => __( 'Add New Options' ),
+      'new_item_name' => __( 'New Display Option' ),
+      'menu_name' => __( 'Display Options' ),
     ),
     // Control the slugs used for this taxonomy
     'rewrite' => array(
-      'slug' => 'department', // This controls the base slug that will display before each term
+      'slug' => 'option', // This controls the base slug that will display before each term
       'with_front' => false, // Don't display the category base before "/locations/"
-      'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+      'hierarchical' => false // This will allow URL's like "/locations/boston/cambridge/"
     ),
   ));	
 
