@@ -11,15 +11,15 @@ function add_custom_taxonomies() {
   register_taxonomy('topics', 
 	array(
   	'post',
-	'page',	
+	'page',
 	'phila_news'
   ), array(
     // Hierarchical taxonomy (like categories)
     'hierarchical' => true,
     // This array of options controls the labels displayed in the WordPress Admin UI
     'labels' => array(
-      'name' => _x( 'Topics', 'taxonomy general name' ),
-      'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
+      'name' => _x( 'Topics', 'List of topics' ),
+      'singular_name' => _x( 'Topic', 'topic' ),
       'search_items' =>  __( 'Search Topics' ),
       'all_items' => __( 'All Topics' ),
       //'parent_item' => __( 'Parent Topics' ),
@@ -37,5 +37,34 @@ function add_custom_taxonomies() {
       'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
     ),
   ));
+ 
+	register_taxonomy('departments', 
+	array(
+  	'post',	
+	'page',
+	'phila_news',
+  ), array(
+    // Hierarchical taxonomy (like categories)
+    'hierarchical' => true,
+    // This array of options controls the labels displayed in the WordPress Admin UI
+    'labels' => array(
+      'name' => _x( 'Departments', 'departments' ),
+      'singular_name' => _x( 'Department', 'Departments' ),
+      'search_items' =>  __( 'Search Departments' ),
+      'all_items' => __( 'All Departments' ),
+      'edit_item' => __( 'Edit Department' ),
+      'update_item' => __( 'Update Department' ),
+      'add_new_item' => __( 'Add New Department' ),
+      'new_item_name' => __( 'New Department Name' ),
+      'menu_name' => __( 'Departments' ),
+    ),
+    // Control the slugs used for this taxonomy
+    'rewrite' => array(
+      'slug' => 'department', // This controls the base slug that will display before each term
+      'with_front' => false, // Don't display the category base before "/locations/"
+      'hierarchical' => true // This will allow URL's like "/locations/boston/cambridge/"
+    ),
+  ));	
+
 }
 add_action( 'init', 'add_custom_taxonomies', 0 );
