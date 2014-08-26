@@ -8,10 +8,10 @@ parent::__construct(
 	'phila_topics_display_widget', 
 
 	// Widget name will appear in UI
-	__('Phila Display Topics Widget', 'phila'), 
+	__('Phila News Topics Widget', 'phila'), 
 
 	// Widget description
-	array( 'description' => __( 'Displays the list of topics and links to filtered views', 'phila' ), ) 
+	array( 'description' => __( 'Displays the list of news topics and links to filtered views', 'phila' ), ) 
 	);
 }
 
@@ -25,26 +25,24 @@ public function widget( $args, $instance ) {
 
 
 	$topic_args = array( 'hide_empty=0' );
-
-					$terms = get_terms('topics', $topic_args);
-					if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
-						$count = count($terms);
-						$i=0;
-						$term_list = '<p class="topics-archive">';
-						foreach ($terms as $term) {
-							$i++;
-							$term_list .= '<a href="?topics=' . seoUrl($term->name) . '" title="' . sprintf(__('View all post filed under %s', 'phila'), $term->name) . '">' . $term->name . '</a>';
-							if ($count != $i) {
-								$term_list .= ' &middot; ';
-							}
-							else {
-								$term_list .= '</p>';
-							}
-						}
-						echo $term_list;
-					}
-
+	$terms = get_terms('topics', $topic_args);
+	if ( !empty( $terms ) && !is_wp_error( $terms ) ) {
+		$count = count($terms);
+		$i=0;
+		$term_list = '<ul class="topics-archive">';
+		foreach ($terms as $term) {
+			$count_posts = wp_count_posts();
+			$i++;
+			$term_list .= '<li>';
+			$term_list .= '<a href="' . get_site_url() . '/news/?topics=' . seoUrl($term->name) . '" title="' . sprintf(__('View all post filed under %s', 'phila'), $term->name) . '">' . $term->name . '</a>';
+			$term_list .= ' (' . $term->count . ')';
+			$term_list .= '</li>';	
+			}
+		$term_list .= '</ul>';
+		echo $term_list;
+	}
 echo $args['after_widget'];
+
 }
 		
 // Widget Backend 
@@ -53,7 +51,7 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'The title', 'phila' );
+$title = __( 'Topics', 'phila' );
 }
 // Widget admin form
 ?>

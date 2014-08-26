@@ -10,8 +10,6 @@ function add_custom_taxonomies() {
   // Add new "Locations" taxonomy to Posts
   register_taxonomy('topics', 
 	array(
-  	'post',
-	'page',
 	'phila_news'
   ), array(
     // Hierarchical taxonomy (like categories)
