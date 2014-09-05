@@ -34,7 +34,7 @@ public function widget( $args, $instance ) {
 			$count_posts = wp_count_posts();
 			$i++;
 			$term_list .= '<li>';
-			$term_list .= '<a href="' . get_site_url() . '/news/?topics=' . seoUrl($term->name) . '" title="' . sprintf(__('View all post filed under %s', 'phila'), $term->name) . '">' . $term->name . '</a>';
+			$term_list .= '<a href="' . get_site_url() . '/news/?topics=' . $term->slug . '" title="' . sprintf(__('View all post filed under %s', 'phila'), $term->name) . '">' . $term->name . '</a>';
 			$term_list .= ' (' . $term->count . ')';
 			$term_list .= '</li>';	
 			}
