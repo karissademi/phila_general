@@ -35,3 +35,19 @@ function the_excerpt_max_charlength($charlength) {
 		echo $excerpt;
 	}
 }
+
+function chop_chars($the_content, $charlength) {
+	$charlength++;
+	
+	if ( mb_strlen( $the_content ) > $charlength ) {
+		$subex = mb_substr( $the_content, 0, $charlength - 5 );
+		$exwords = explode( ' ', $subex );
+		$excut = - ( mb_strlen( $exwords[ count( $exwords ) - 1 ] ) );
+			if ( $excut < 0 ) {
+				echo mb_substr( $subex, 0, $excut );
+				} else {
+					echo $subex;
+				}
+	echo '...';
+	}
+}	
