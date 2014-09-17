@@ -22,6 +22,6 @@ function phila_page_title_function( $atts, $content = null ){
 			'title' => get_the_title(isset($post->ID))
 		), $atts );
 		
-	return '<h1 class="page-title">' . "{$a['title']}" . '</h1>';
+	return '<h1 class="inner-page-title">' . "{$a['title']}" . '</h1>';
 }
 add_shortcode( 'phila_page_title', 'phila_page_title_function' );
