@@ -10,7 +10,7 @@ function phila_separator_function( $atts, $content = null ){
 			'title' => 'Seperator'
 		), $atts );
 		
-	return '<h1 class="break">' . "{$a['title']}" . '</h1>';
+	return '<h2 class="break">' . "{$a['title']}" . '</h2>';
 }
 add_shortcode( 'phila_separator', 'phila_separator_function' );
 
