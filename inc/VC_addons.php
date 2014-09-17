@@ -24,7 +24,7 @@ function DEV_SIDEBAR_template_for_vc() {
     $data['image_path'] = preg_replace( '/\s/', '%20', plugins_url( '../img/abstract2.jpg', __FILE__ ) ); // always use preg replace to be sure that "space" will not break logic
     $data['custom_class'] = 'DEV_SIDEBAR_template_for_vc';
     $data['content']    = <<<CONTENT
-        [vc_row][vc_column width="1/4"][templatera id="324"][/vc_column][vc_column width="3/4"][phila_page_title][/vc_column][/vc_row]
+        [vc_row][vc_column width="1/4"][templatera id="324"][/vc_column][vc_column width="3/4"][phila_page_title][/vc_column][/vc_row][vc_row][vc_column width="1/1"][templatera id="662" el_class="visible-xs visible-sm"][/vc_column][/vc_row]
 CONTENT;
  
     vc_add_default_templates( $data );
