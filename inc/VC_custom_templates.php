@@ -30,8 +30,6 @@ CONTENT;
     vc_add_default_templates( $data );
 }
 
-
-
 add_filter( 'vc_load_default_templates', 'phila_template_modify_array' );
 function phila_template_modify_array($data) {
     return array(); // This will remove all default templates
