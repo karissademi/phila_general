@@ -36,7 +36,7 @@ function phila_side_nav_func($atts, $content = null) {
 	extract(shortcode_atts(array(  
 		'menu'            => '', 
 		'container'       => 'div', 
-		'container_class' => 'navmenu navmenu-default navmenu-fixed-left offcanvas-xs', 
+		'container_class' => 'navmenu navmenu-default navmenu-fixed-left offcanvas-xs scroll-me', 
 		'container_id'    => 'side-nav', 
 		'menu_class'      => 'nav navmenu-nav nav-pills nav-stacked', 
 		'menu_id'         => 'menu-id',

@@ -16,9 +16,9 @@ class Phila_walker extends Walker_Nav_Menu{
 	 $class_names = $value = '';
 	
 		// If the item has children, add the dropdown class for bootstrap
-		if ( $args->has_children ) {
+		//if ( $args->has_children ) {
 		//	$class_names = "dropdown  ";
-		}
+		//}
 	
 		$classes = empty( $object->classes ) ? array() : (array) $object->classes;
 		
@@ -44,7 +44,7 @@ class Phila_walker extends Walker_Nav_Menu{
 
     // if the item has children add the caret just before closing the anchor tag
     if ( $args->has_children ) {
-    	//$item_output .= '<b class="caret"></b></a>';
+    	$item_output .= '</a>';
     }
     else {
     	$item_output .= '</a>';
