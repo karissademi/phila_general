@@ -54,7 +54,7 @@ function phila_side_nav_func($atts, $content = null) {
  
  
 	return '<div id="side-menu-button">
-      <button type="button" class="side-menu" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">Menu</button>
+      <button type="button" class="side-menu btn btn-primary" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body"><i class="glyphicon glyphicon-chevron-right"></i></button>
     </div>' . wp_nav_menu( array( 
 		'menu'            => $menu, 
 		'container'       => $container, 
