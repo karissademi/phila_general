@@ -36,7 +36,7 @@ function phila_side_nav_func($atts, $content = null) {
 	extract(shortcode_atts(array(  
 		'menu'            => '', 
 		'container'       => 'div', 
-		'container_class' => 'navmenu navmenu-default navmenu-fixed-left offcanvas-sm', 
+		'container_class' => 'navmenu navmenu-default navmenu-fixed-left offcanvas-xs', 
 		'container_id'    => 'side-nav', 
 		'menu_class'      => 'nav navmenu-nav nav-pills nav-stacked', 
 		'menu_id'         => 'menu-id',
@@ -54,7 +54,7 @@ function phila_side_nav_func($atts, $content = null) {
  
  
 	return '<div id="side-menu-button">
-      <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">Menu</button>
+      <button type="button" class="side-menu" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body">Menu</button>
     </div>' . wp_nav_menu( array( 
 		'menu'            => $menu, 
 		'container'       => $container, 

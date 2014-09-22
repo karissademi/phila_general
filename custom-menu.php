@@ -44,7 +44,7 @@ class Phila_walker extends Walker_Nav_Menu{
 
     // if the item has children add the caret just before closing the anchor tag
     if ( $args->has_children ) {
-    	$item_output .= '<b class="caret"></b></a>';
+    	//$item_output .= '<b class="caret"></b></a>';
     }
     else {
     	$item_output .= '</a>';
