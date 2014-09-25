@@ -34,14 +34,20 @@ add_shortcode( 'phila_page_title', 'phila_page_title_function' );
 
 //[phila_icon_heading]
 function phila_icon_heading_function( $atts, $content = null ){
-	$a = shortcode_atts(
+	extract(shortcode_atts(
 		array(
 			'text' 	=> 'the text',
 			'icon'	=> 'glyphicon-ok',
 			'link'	=> ''
-		), $atts );
+		), $atts ));
 		
-	return '<div class="large"><i class="glyphicon ' . "{$a['icon']}\">" . '</i>' . "{$a['text']}</div>";
+	$output = '<div class="large"><i class="glyphicon ' . "$icon\">" . '</i>';
+	if($link) {$output .= '<a href="' . $link .'">' ;}
+	$output .= $text;
+	if($link) {$output .= '</a>';}
+	$output .= '</div>';
+	
+	return $output;
 }
 add_shortcode( 'phila_icon_heading', 'phila_icon_heading_function' );
 
