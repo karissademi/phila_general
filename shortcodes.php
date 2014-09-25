@@ -41,7 +41,7 @@ function phila_icon_heading_function( $atts, $content = null ){
 			'link'	=> ''
 		), $atts ));
 		
-	$output = '<div class="icon-heading large"><i class="glyphicon ' . "$icon\">" . '</i>';
+	$output = '<div class="icon-heading medium"><i class="glyphicon ' . "$icon\">" . '</i>';
 	if($link) {$output .= '<a href="' . $link .'">' ;}
 	$output .= $text;
 	if($link) {$output .= '</a>';}
