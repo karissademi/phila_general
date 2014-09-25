@@ -31,6 +31,21 @@ function phila_page_title_function( $atts, $content = null ){
 }
 add_shortcode( 'phila_page_title', 'phila_page_title_function' );
 
+
+//[phila_icon_heading]
+function phila_icon_heading_function( $atts, $content = null ){
+	$a = shortcode_atts(
+		array(
+			'text' 	=> 'the text',
+			'icon'	=> 'glyphicon-ok',
+			'link'	=> ''
+		), $atts );
+		
+	return '<div class="large"><i class="glyphicon ' . "{$a['icon']}\">" . '</i>' . "{$a['text']}</div>";
+}
+add_shortcode( 'phila_icon_heading', 'phila_icon_heading_function' );
+
+
 //returns our custom Wordpress menu
 function phila_side_nav_func($atts, $content = null) {
 	extract(shortcode_atts(array(  
