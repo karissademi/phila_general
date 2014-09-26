@@ -37,11 +37,11 @@ function phila_icon_heading_function( $atts, $content = null ){
 	extract(shortcode_atts(
 		array(
 			'text' 	=> 'the text',
-			'icon'	=> 'glyphicon-ok',
+			'icon'	=> 'fa-angellist',
 			'link'	=> ''
 		), $atts ));
 		
-	$output = '<div class="icon-heading medium"><i class="glyphicon ' . "$icon\">" . '</i>';
+	$output = '<div class="icon-heading medium"><i class="fa ' . "$icon\">" . '</i>';
 	if($link) {$output .= '<a href="' . $link .'">' ;}
 	$output .= $text;
 	if($link) {$output .= '</a>';}
